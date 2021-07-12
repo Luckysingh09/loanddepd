@@ -50,7 +50,7 @@ if uploaded_file is not None:
         dfl['CURRENT_BALANCE']=dfl['CURRENT_BALANCE'].str.replace(",","")
         dfl['CURRENT_BALANCE']=pd.to_numeric(dfl['CURRENT_BALANCE'])
         dfl['SANC_DT']=pd.to_datetime(dfl['SANC_DT'], format="%d-%m-%Y",errors = 'coerce')
-        dfl1=pd.read_excel(r"C:\Users\lhoadmin\Desktop\TOOLS\loan_mapping.xlsx")
+        dfl1=pd.read_excel("https://rmgbank-my.sharepoint.com/:x:/g/personal/loans_rmgb_in/EcErNXjr4VlAr2zqoCgYD0oBMVq9CD6f4cfSMo2piEVpAA?e=F3vRKb")
         dflfinal=pd.merge(dfl,dfl1,how="right",left_on='Product_Desc',right_on='Product_Desc')
         dfcom=pd.concat([dffinal,dflfinal])
 
